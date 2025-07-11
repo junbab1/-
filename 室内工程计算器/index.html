@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>室内装修预算计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>室内装修预算计算器</h1>
+        <form id="budget-form">
+            <div class="form-group">
+                <label for="projectName">项目名称</label>
+                <input type="text" id="projectName" value="XX小区1栋101房">
+            </div>
+            <div class="form-group">
+                <label for="building_area">建筑面积 (m²)</label>
+                <input type="number" id="building_area" value="100">
+            </div>
+            <div class="form-group">
+                <label for="decorationGrade">装修档次系数</label>
+                <input type="number" id="decorationGrade" value="1.2" step="0.1">
+                <small>1.0=标准, 0.8=经济, 1.2=舒适, 1.5=高端</small>
+            </div>
+            <h4>拆除工程</h4>
+            <div class="form-group">
+                <label for="demolish_ground_tile">拆除地面瓷砖 (m²)</label>
+                <input type="number" id="demolish_ground_tile" value="0">
+            </div>
+            <div class="form-group">
+                <label for="demolish_wall_surface">铲除墙面腻子 (m²)</label>
+                <input type="number" id="demolish_wall_surface" value="0">
+            </div>
+            <div class="form-group">
+                <label for="demolish_wall_tile">拆除墙面瓷砖 (m²)</label>
+                <input type="number" id="demolish_wall_tile" value="0">
+            </div>
+            <div class="form-group">
+                <label for="demolish_wall">拆除墙体 (m)</label>
+                <input type="number" id="demolish_wall" value="0">
+            </div>
+            <div class="form-group">
+                <label for="demolish_window">拆除飘窗 (m)</label>
+                <input type="number" id="demolish_window" value="0">
+            </div>
+
+            <h4>泥水工程</h4>
+            <div class="form-group">
+                <label for="new_wall">新建墙体 (m²)</label>
+                <input type="number" id="new_wall" value="0">
+            </div>
+            <div class="form-group">
+                <label for="wall_plaster">墙面抹灰 (m²)</label>
+                <input type="number" id="wall_plaster" value="0">
+            </div>
+            <div class="form-group">
+                <label for="ground_leveling">地面找平 (m²)</label>
+                <input type="number" id="ground_leveling" value="0">
+            </div>
+            <div class="form-group">
+                <label for="waterproof">防水处理 (m²)</label>
+                <input type="number" id="waterproof" value="0">
+            </div>
+            <div class="form-group">
+                <label for="tile_paste_ground">地面铺贴 (m²)</label>
+                <input type="number" id="tile_paste_ground" value="0">
+            </div>
+            <div class="form-group">
+                <label for="tile_paste_wall">墙面铺贴 (m²)</label>
+                <input type="number" id="tile_paste_wall" value="0">
+            </div>
+
+            <h4>木作工程</h4>
+            <div class="form-group">
+                <label for="ceiling_flat">平面吊顶 (m²)</label>
+                <input type="number" id="ceiling_flat" value="0">
+            </div>
+            <div class="form-group">
+                <label for="ceiling_shaped">异型吊顶 (m²)</label>
+                <input type="number" id="ceiling_shaped" value="0">
+            </div>
+            <div class="form-group">
+                <label for="cabinet_projection">定制柜-投影 (m²)</label>
+                <input type="number" id="cabinet_projection" value="0">
+            </div>
+            <div class="form-group">
+                <label for="cabinet_unfold">定制柜-展开 (m²)</label>
+                <input type="number" id="cabinet_unfold" value="0">
+            </div>
+
+
+
+            <h4>费用调整与税金</h4>
+            <div class="form-group">
+                <label for="laborCostFactor">人工费地区浮动</label>
+                <input type="number" id="laborCostFactor" value="1.0" step="0.1">
+                <small>如在人工贵的城市可设为1.1, 便宜的设为0.9</small>
+            </div>
+            <div class="form-group">
+                <label for="material_management_fee_rate">主材跟进管理费率 (%)</label>
+                <input type="number" id="material_management_fee_rate" value="2">
+            </div>
+            <div class="form-group">
+                <label for="tile_wastage_rate">瓷砖损耗费率 (%)</label>
+                <input type="number" id="tile_wastage_rate" value="8">
+            </div>
+            <div class="form-group">
+                <label for="tax_rate">装修税金率 (%)</label>
+                <input type="number" id="tax_rate" value="0">
+                <small>如需开票，请填写税率，例如：7</small>
+            </div>
+            <button type="submit">生成预算</button>
+        </form>
+
+        <div id="result-container" class="hidden">
+            <h2>预算结果</h2>
+            <div id="budget-result">
+                <!-- 预算表格将在这里生成 -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
